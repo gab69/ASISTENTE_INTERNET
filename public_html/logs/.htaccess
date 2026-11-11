@@ -1,0 +1,5 @@
+# Carpeta privada: nunca accesible desde el navegador
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule ^ - [F,L]
+</IfModule>

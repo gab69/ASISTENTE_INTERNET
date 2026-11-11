@@ -1,0 +1,29 @@
+# ==============================================
+# API ChatCenter - https://tudominio.com/api/
+# Solo directivas permitidas en cualquier hosting compartido.
+# ==============================================
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Pasar el header Authorization a PHP (PHP-FPM / LiteSpeed lo eliminan)
+	RewriteCond %{HTTP:Authorization} .
+	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+	# Archivos ocultos y sensibles
+	RewriteRule (^|/)\. - [F,L]
+	RewriteRule \.(sql|log|json|lock|md|pdf|txt|ini)$ - [F,L,NC]
+
+	# Carpetas internas
+	RewriteRule ^(controllers|models|routes|vendor|logs)(/|$) - [F,L]
+	RewriteRule ^internal\.php$ - [F,L]
+
+	# Todo lo que no sea index.php lo atiende el router de la API
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header always set Cache-Control "no-store, max-age=0"
+	Header always set X-Content-Type-Options "nosniff"
+</IfModule>

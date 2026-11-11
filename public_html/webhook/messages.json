@@ -1,0 +1,132 @@
+/*=============================================
+Mensaje tipo Plantilla
+=============================================*/
+
+{
+  "messaging_product": "whatsapp",
+  "to": "",
+  "type": "template",
+  "template": {
+    "name": "hello_world",
+    "language": {
+      "code": "en_US"
+    }
+  }
+}
+
+/*=============================================
+Mensaje tipo Texto
+=============================================*/
+
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",
+  "type": "text",
+  "text": {
+    "preview_url": true,
+    "body": "<BODY_TEXT>"
+  }
+}
+
+/*=============================================
+Mensaje tipo Interactivo - Botones
+=============================================*/
+
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",
+  "type": "interactive",
+  "interactive": {
+    "type": "button",
+    "header": {"<MESSAGE_HEADER>"},
+    "body": {
+      "text": "<BODY_TEXT>"
+    },
+    "footer": {
+      "text": "<FOOTER_TEXT>"
+    },
+    "action": {
+      "buttons": [
+        {
+          "type": "reply",
+          "reply": {
+            "id": "<BUTTON_ID>",
+            "title": "<BUTTON_LABEL_TEXT>"
+          }
+        },
+        {
+          "type": "reply",
+          "reply": {
+            "id": "<BUTTON_ID>",
+            "title": "<BUTTON_LABEL_TEXT>"
+          }
+        }
+        /*additional button*/
+      ]
+    }
+  }
+}
+
+/*=============================================
+Mensaje tipo Interactivo - Lista
+=============================================*/
+
+{
+  "messaging_product": "whatsapp",
+  "recipient_type": "individual",
+  "to": "<WHATSAPP_USER_PHONE_NUMBER>",
+  "type": "interactive",
+  "interactive": {
+    "type": "list",
+    "header": {"<MESSAGE_HEADER>"},
+    "body": {
+      "text": "<BODY_TEXT>"
+    },
+    "footer": {
+      "text": "<FOOTER_TEXT>"
+    },
+    "action": {
+      "button":"<LIST_NAME>",
+      "sections": [
+        {
+          "title": "<SECTION_TITLE_TEXT>",
+          "rows": [
+            {
+              "id": "<ROW_ID>",
+              "title": "<ROW_TITLE_TEXT>",
+              "description": "<ROW_DESCRIPTION_TEXT>"
+            }
+            /* Additional rows would go here*/
+          ]
+        }
+        /* Additional sections would go here */
+      ]
+    }
+  }
+}
+
+
+/*=============================================
+<MESSAGE_HEADER>
+=============================================*/
+
+{
+  "type": "text",
+  "text": "<HEADER_TEXT>"
+}
+
+{
+  "type": "image",
+  "image": {
+    "link": "<URL_IMAGE>"
+  }
+}
+
+{
+  "type": "video",
+  "video": {
+    "link": "<URL_VIDEO>"
+  }
+}

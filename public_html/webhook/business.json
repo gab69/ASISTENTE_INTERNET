@@ -1,0 +1,122 @@
+/*=============================================
+JSON NEGOCIO PARTE 1
+=============================================*/
+
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "963763899281770",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15556473933",
+              "phone_number_id": "609724448890981"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTczMDIyMjU4MDAyFQIAERgSQkQ1RjU1ODBGQTk4MzU1QjhCAA==",
+                "status": "sent",
+                "timestamp": "1744833381",
+                "recipient_id": "573022258002",
+                "conversation": {
+                  "id": "cb447eca4219b67fa917f2e1dc561740",
+                  "expiration_timestamp": "1744919820",
+                  "origin": {
+                    "type": "utility"
+                  }
+                },
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "CBP",
+                  "category": "utility"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+
+/*=============================================
+JSON NEGOCIO PARTE 2
+=============================================*/
+
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "963763899281770",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15556473933",
+              "phone_number_id": "609724448890981"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTczMDIyMjU4MDAyFQIAERgSQkQ1RjU1ODBGQTk4MzU1QjhCAA==",
+                "status": "read",
+                "timestamp": "1744833382",
+                "recipient_id": "573022258002"
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+
+/*=============================================
+JSON NEGOCIO PARTE 3
+=============================================*/
+
+
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "963763899281770",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15556473933",
+              "phone_number_id": "609724448890981"
+            },
+            "statuses": [
+              {
+                "id": "wamid.HBgMNTczMDIyMjU4MDAyFQIAERgSQkQ1RjU1ODBGQTk4MzU1QjhCAA==",
+                "status": "delivered",
+                "timestamp": "1744833382",
+                "recipient_id": "573022258002",
+                "conversation": {
+                  "id": "cb447eca4219b67fa917f2e1dc561740",
+                  "origin": {
+                    "type": "utility"
+                  }
+                },
+                "pricing": {
+                  "billable": true,
+                  "pricing_model": "CBP",
+                  "category": "utility"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}

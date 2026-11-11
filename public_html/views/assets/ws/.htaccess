@@ -1,0 +1,8 @@
+# Carpeta de subidas: nunca ejecutar scripts aqui
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+	RewriteRule \.(php\d?|phtml|phar|pht|phps|cgi|pl|py|sh)$ - [F,L,NC]
+	RewriteRule (^|/)\. - [F,L]
+	RewriteCond %{REQUEST_FILENAME} -d
+	RewriteRule ^ - [F,L]
+</IfModule>

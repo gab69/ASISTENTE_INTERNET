@@ -1,0 +1,1090 @@
+{
+	"info": {
+		"_postman_id": "5a4d133e-a143-4988-ac64-a0e86abd00a8",
+		"name": "ChatCenter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11446859"
+	},
+	"item": [
+		{
+			"name": "POST - REGISTRO DE USUARIOS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email_user",
+							"value": "editor@user.com",
+							"type": "text"
+						},
+						{
+							"key": "password_user",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}users?register=true&suffix=user",
+					"host": [
+						"{{endpoint}}users"
+					],
+					"query": [
+						{
+							"key": "register",
+							"value": "true"
+						},
+						{
+							"key": "suffix",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - LOGIN DE USUARIOS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email_user",
+							"value": "editor@user.com",
+							"type": "text"
+						},
+						{
+							"key": "password_user",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}users?login=true&suffix=user",
+					"host": [
+						"{{endpoint}}users"
+					],
+					"query": [
+						{
+							"key": "login",
+							"value": "true"
+						},
+						{
+							"key": "suffix",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - CREACIÓN DE DATOS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id_category_product",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "name_product",
+							"value": "photoshop",
+							"type": "text"
+						},
+						{
+							"key": "date_created_product",
+							"value": "2025-03-05",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}products?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDEyMDY3MTYsImV4cCI6MTc0MTI5MzExNiwiZGF0YSI6eyJpZCI6IjIiLCJlbWFpbCI6ImVkaXRvckB1c2VyLmNvbSJ9fQ.TaTX-jnzs2jiFqWYt0aJsiuS-V_U-naWwBsF3TParnU&table=users&suffix=user",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDEyMDY3MTYsImV4cCI6MTc0MTI5MzExNiwiZGF0YSI6eyJpZCI6IjIiLCJlbWFpbCI6ImVkaXRvckB1c2VyLmNvbSJ9fQ.TaTX-jnzs2jiFqWYt0aJsiuS-V_U-naWwBsF3TParnU"
+						},
+						{
+							"key": "table",
+							"value": "users"
+						},
+						{
+							"key": "suffix",
+							"value": "user"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BÁSICO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}categories",
+					"host": [
+						"{{endpoint}}categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - DATOS ESPECÍFICOS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?select=name_product,date_created_product",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "name_product,date_created_product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - FILTROS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?select=name_product,date_created_product,id_category_product&linkTo=id_category_product&equalTo=2",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "name_product,date_created_product,id_category_product"
+						},
+						{
+							"key": "linkTo",
+							"value": "id_category_product"
+						},
+						{
+							"key": "equalTo",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - FILTROS MÚLTIPLES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?select=name_product,date_created_product,id_category_product&linkTo=id_category_product,name_product&equalTo=1,php",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "select",
+							"value": "name_product,date_created_product,id_category_product"
+						},
+						{
+							"key": "linkTo",
+							"value": "id_category_product,name_product"
+						},
+						{
+							"key": "equalTo",
+							"value": "1,php"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - ORDENAR DATOS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?orderBy=name_product&orderMode=ASC",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "name_product"
+						},
+						{
+							"key": "orderMode",
+							"value": "ASC"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - LIMITAR DATOS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?orderBy=name_product&orderMode=ASC&startAt=0&endAt=3",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "orderBy",
+							"value": "name_product"
+						},
+						{
+							"key": "orderMode",
+							"value": "ASC"
+						},
+						{
+							"key": "startAt",
+							"value": "0"
+						},
+						{
+							"key": "endAt",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - RELACIONES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}relations?rel=products,categories&type=product,category&select=name_product,name_category",
+					"host": [
+						"{{endpoint}}relations"
+					],
+					"query": [
+						{
+							"key": "rel",
+							"value": "products,categories"
+						},
+						{
+							"key": "type",
+							"value": "product,category"
+						},
+						{
+							"key": "select",
+							"value": "name_product,name_category"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - RELACIONES CON FILTROS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}relations?rel=products,categories&type=product,category&linkTo=id_category_product&equalTo=1",
+					"host": [
+						"{{endpoint}}relations"
+					],
+					"query": [
+						{
+							"key": "rel",
+							"value": "products,categories"
+						},
+						{
+							"key": "type",
+							"value": "product,category"
+						},
+						{
+							"key": "linkTo",
+							"value": "id_category_product"
+						},
+						{
+							"key": "equalTo",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BÚSQUEDA",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?linkTo=name_product&search=ph",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "linkTo",
+							"value": "name_product"
+						},
+						{
+							"key": "search",
+							"value": "ph"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BÚSQUEDA CON FILTRO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?linkTo=name_product,id_category_product&search=ph,1",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "linkTo",
+							"value": "name_product,id_category_product"
+						},
+						{
+							"key": "search",
+							"value": "ph,1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - BÚSQUEDA CON FILTRO Y RELACIONES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}relations?linkTo=name_product,id_category_product&search=ph,1&rel=products,categories&type=product,category&select=name_product,name_category",
+					"host": [
+						"{{endpoint}}relations"
+					],
+					"query": [
+						{
+							"key": "linkTo",
+							"value": "name_product,id_category_product"
+						},
+						{
+							"key": "search",
+							"value": "ph,1"
+						},
+						{
+							"key": "rel",
+							"value": "products,categories"
+						},
+						{
+							"key": "type",
+							"value": "product,category"
+						},
+						{
+							"key": "select",
+							"value": "name_product,name_category"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - RANGOS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?linkTo=date_created_product&between1=2025-02-01&between2=2025-03-31",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "linkTo",
+							"value": "date_created_product"
+						},
+						{
+							"key": "between1",
+							"value": "2025-02-01"
+						},
+						{
+							"key": "between2",
+							"value": "2025-03-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - RANGOS CON FILTRO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}products?linkTo=date_created_product&between1=2025-02-01&between2=2025-03-31&filterTo=id_category_product&inTo=1",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "linkTo",
+							"value": "date_created_product"
+						},
+						{
+							"key": "between1",
+							"value": "2025-02-01"
+						},
+						{
+							"key": "between2",
+							"value": "2025-03-31"
+						},
+						{
+							"key": "filterTo",
+							"value": "id_category_product"
+						},
+						{
+							"key": "inTo",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - RANGOS CON FILTRO RELACIONES",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{endpoint}}relations?linkTo=date_created_product&between1=2025-02-01&between2=2025-03-31&filterTo=id_category_product&inTo=1&rel=products,categories&type=product,category",
+					"host": [
+						"{{endpoint}}relations"
+					],
+					"query": [
+						{
+							"key": "linkTo",
+							"value": "date_created_product"
+						},
+						{
+							"key": "between1",
+							"value": "2025-02-01"
+						},
+						{
+							"key": "between2",
+							"value": "2025-03-31"
+						},
+						{
+							"key": "filterTo",
+							"value": "id_category_product"
+						},
+						{
+							"key": "inTo",
+							"value": "1"
+						},
+						{
+							"key": "rel",
+							"value": "products,categories"
+						},
+						{
+							"key": "type",
+							"value": "product,category"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - EDICIÓN DE DATOS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "date_created_product",
+							"value": "2025-05-05",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}products?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDEyMDY3MTYsImV4cCI6MTc0MTI5MzExNiwiZGF0YSI6eyJpZCI6IjIiLCJlbWFpbCI6ImVkaXRvckB1c2VyLmNvbSJ9fQ.TaTX-jnzs2jiFqWYt0aJsiuS-V_U-naWwBsF3TParnU&table=users&suffix=user&id=4&nameId=id_product",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDEyMDY3MTYsImV4cCI6MTc0MTI5MzExNiwiZGF0YSI6eyJpZCI6IjIiLCJlbWFpbCI6ImVkaXRvckB1c2VyLmNvbSJ9fQ.TaTX-jnzs2jiFqWYt0aJsiuS-V_U-naWwBsF3TParnU"
+						},
+						{
+							"key": "table",
+							"value": "users"
+						},
+						{
+							"key": "suffix",
+							"value": "user"
+						},
+						{
+							"key": "id",
+							"value": "4"
+						},
+						{
+							"key": "nameId",
+							"value": "id_product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - ELIMINAR DATOS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "date_created_product",
+							"value": "2025-05-05",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}products?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDEyMDY3MTYsImV4cCI6MTc0MTI5MzExNiwiZGF0YSI6eyJpZCI6IjIiLCJlbWFpbCI6ImVkaXRvckB1c2VyLmNvbSJ9fQ.TaTX-jnzs2jiFqWYt0aJsiuS-V_U-naWwBsF3TParnU&table=users&suffix=user&id=4&nameId=id_product",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE3NDEyMDY3MTYsImV4cCI6MTc0MTI5MzExNiwiZGF0YSI6eyJpZCI6IjIiLCJlbWFpbCI6ImVkaXRvckB1c2VyLmNvbSJ9fQ.TaTX-jnzs2jiFqWYt0aJsiuS-V_U-naWwBsF3TParnU"
+						},
+						{
+							"key": "table",
+							"value": "users"
+						},
+						{
+							"key": "suffix",
+							"value": "user"
+						},
+						{
+							"key": "id",
+							"value": "4"
+						},
+						{
+							"key": "nameId",
+							"value": "id_product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST - CREACIÓN DE DATOS SIN TOKEN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "id_category_product",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "name_product",
+							"value": "photoshop",
+							"type": "text"
+						},
+						{
+							"key": "date_created_product",
+							"value": "2025-03-05",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}products?token=no&except=id_product",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "no"
+						},
+						{
+							"key": "except",
+							"value": "id_product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - EDICIÓN DE DATOS SIN TOKEN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name_product",
+							"value": "js",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}products?token=no&except=id_product&id=2&nameId=id_product",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "no"
+						},
+						{
+							"key": "except",
+							"value": "id_product"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						},
+						{
+							"key": "nameId",
+							"value": "id_product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE - ELIMINAR DATOS SIN TOKEN",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{apikey}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name_product",
+							"value": "js",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{endpoint}}products?token=no&except=id_product&id=2&nameId=id_product",
+					"host": [
+						"{{endpoint}}products"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "no"
+						},
+						{
+							"key": "except",
+							"value": "id_product"
+						},
+						{
+							"key": "id",
+							"value": "2"
+						},
+						{
+							"key": "nameId",
+							"value": "id_product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "https://graph.facebook.com/v22.0/.../messages",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer ...",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"messaging_product\": \"whatsapp\",\r\n  \"recipient_type\": \"individual\",\r\n  \"to\": \"573022258002\",\r\n  \"type\": \"text\",\r\n  \"text\": {\r\n    \"preview_url\": true,\r\n    \"body\": \"Gracias por comunicarse con nosotros, muy pronto lo atenderemos\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v22.0/.../messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v22.0",
+						"609724448890981",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

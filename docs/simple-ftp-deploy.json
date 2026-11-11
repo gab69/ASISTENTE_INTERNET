@@ -1,0 +1,14 @@
+{
+    "host": "",
+    "port": 21, 
+    "username": "",
+    "password": "",
+    "rootDirectory": "",
+    "autoCreateDirectory": true,
+    "ignoredFilenames": ["example.py", "anotherFilename.json"],
+    "ignoredExtensions": [".ignore", ".txt"],
+    "ignoredFolders": ["ignore", "IGNORE"],
+    "sessionCacheEnabled": true,
+    "connectionTimeout": 600,
+    "passive": true
+}

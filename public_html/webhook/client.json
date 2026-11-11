@@ -1,0 +1,182 @@
+/*=============================================
+JSON CLIENTE MENSAJE TEXTO
+=============================================*/
+
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "963763899281770",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15556473933",
+              "phone_number_id": "609724448890981"
+            },
+            "contacts": [
+              {
+                "profile": {
+                  "name": "Tutoriales a tu Alcance"
+                },
+                "wa_id": "573022258002"
+              }
+            ],
+            "messages": [
+              {
+                "from": "573022258002",
+                "id": "wamid.HBgMNTczMDIyMjU4MDAyFQIAEhgUM0E1QTM0OTFDMDFBQTBCMENEODIA",
+                "timestamp": "1744833262",
+                "text": {
+                  "body": "Hola buenas tardes"
+                },
+                "type": "text"
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+
+/*=============================================
+JSON CLIENTE MENSAJE IMAGEN
+=============================================*/
+
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "963763899281770",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15556473933",
+              "phone_number_id": "609724448890981"
+            },
+            "contacts": [
+              {
+                "profile": {
+                  "name": "Tutoriales a tu Alcance"
+                },
+                "wa_id": "573022258002"
+              }
+            ],
+            "messages": [
+              {
+                "from": "573022258002",
+                "id": "wamid.HBgMNTczMDIyMjU4MDAyFQIAEhgUM0E5RkE0OThFQjFGMDVCNUIzNzgA",
+                "timestamp": "1744907564",
+                "type": "image",
+                "image": {
+                  "mime_type": "image/jpeg",
+                  "sha256": "zihrczEAR+jhtucP3FzLvslOurWlskmRNJk6Ck8qC+k=",
+                  "id": "882925183949593"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+
+/*=============================================
+JSON CLIENTE MENSAJE VIDEO
+=============================================*/
+
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "963763899281770",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15556473933",
+              "phone_number_id": "609724448890981"
+            },
+            "contacts": [
+              {
+                "profile": {
+                  "name": "Tutoriales a tu Alcance"
+                },
+                "wa_id": "573022258002"
+              }
+            ],
+            "messages": [
+              {
+                "from": "573022258002",
+                "id": "wamid.HBgMNTczMDIyMjU4MDAyFQIAEhgUM0E5QTc3QUU3NzE3MDA1OTdCRUQA",
+                "timestamp": "1744907714",
+                "type": "video",
+                "video": {
+                  "mime_type": "video/mp4",
+                  "sha256": "AiLHwapeitqYNALo7afI3hQbxu/m8Y+drFeXQs/rXAM=",
+                  "id": "3966583083668869"
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}
+
+/*=============================================
+JSON CLIENTE MENSAJE AUDIO
+=============================================*/
+
+{
+  "object": "whatsapp_business_account",
+  "entry": [
+    {
+      "id": "963763899281770",
+      "changes": [
+        {
+          "value": {
+            "messaging_product": "whatsapp",
+            "metadata": {
+              "display_phone_number": "15556473933",
+              "phone_number_id": "609724448890981"
+            },
+            "contacts": [
+              {
+                "profile": {
+                  "name": "Tutoriales a tu Alcance"
+                },
+                "wa_id": "573022258002"
+              }
+            ],
+            "messages": [
+              {
+                "from": "573022258002",
+                "id": "wamid.HBgMNTczMDIyMjU4MDAyFQIAEhgUM0ExNjZFMjI5MUU3RUI2ODA2N0UA",
+                "timestamp": "1744907840",
+                "type": "audio",
+                "audio": {
+                  "mime_type": "audio/ogg; codecs=opus",
+                  "sha256": "VhdK0mcbZazVa+/nD2AaHgsCi7qz/GqiOq/ZRyt/mec=",
+                  "id": "1875425033310296",
+                  "voice": true
+                }
+              }
+            ]
+          },
+          "field": "messages"
+        }
+      ]
+    }
+  ]
+}

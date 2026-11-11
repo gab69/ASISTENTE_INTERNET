@@ -1,0 +1,50 @@
+# ==============================================
+# ChatCenter (CMS + API) - cPanel (Apache / LiteSpeed)
+#   CMS ............ https://tudominio.com/
+#   API ............ https://tudominio.com/api/
+#   Configuracion .. https://tudominio.com/setup/
+#
+# Solo usa directivas permitidas en cualquier hosting compartido
+# (sin Options, DirectoryIndex, php_value ni ExpiresActive, que en
+# muchos cPanel provocan "500 Internal Server Error").
+# El limite de subida y la version de PHP se ajustan en .user.ini
+# y en cPanel > MultiPHP Manager.
+# ==============================================
+
+<IfModule mod_rewrite.c>
+	RewriteEngine On
+
+	# Pasar el header Authorization a PHP (PHP-FPM / LiteSpeed lo eliminan)
+	RewriteCond %{HTTP:Authorization} .
+	RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+	# Archivos ocultos (.htaccess, .user.ini, .git...) excepto .well-known (SSL)
+	RewriteRule (^|/)\.(?!well-known/) - [F,L]
+
+	# Archivos sensibles en cualquier carpeta
+	RewriteRule \.(sql|log|lock|md|ini)$ - [F,L,NC]
+	RewriteRule (^|/)(config|loader|bootstrap)\.php$ - [F,L,NC]
+	RewriteRule (^|/)composer\.(json|lock)$ - [F,L,NC]
+
+	# Carpetas internas
+	RewriteRule ^(config|controllers|extensions|logs|recursos)(/|$) - [F,L]
+	RewriteRule ^setup/(?!index\.php$).+ - [F,L]
+	RewriteRule ^webhook/pruebas\.php$ - [F,L]
+	RewriteRule ^webhook/.+\.(json|txt)$ - [F,L]
+
+	# Nunca ejecutar scripts dentro de las carpetas de subidas
+	RewriteRule ^views/assets/(files|ws)/.*\.(php\d?|phtml|phar|pht|phps|cgi|pl|py|sh)$ - [F,L,NC]
+
+	# Archivos reales, la API, el asistente y el webhook pasan directo
+	RewriteCond %{REQUEST_FILENAME} -f [OR]
+	RewriteCond %{REQUEST_URI} ^/(api|setup|webhook)(/|$)
+	RewriteRule ^ - [L]
+
+	# Todo lo demas (incluidas carpetas sin index) lo atiende el CMS
+	RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+	Header always set X-Content-Type-Options "nosniff"
+	Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>
